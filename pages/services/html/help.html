@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Need Help - BetterTogether</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="relative  bg-[url('../../../image/cover.jpeg')] bg-cover bg-center flex flex-col">
+<div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <!-- Nav -->
+  <nav class="bg-yellow-400 z-20 bg-opacity-50 shadow-lg p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center z-50">
+      <h1 class="text-3xl font-extrabold text-white">BetterTogether</h1>
+      <div class="space-x-6">
+        <a href="../../home/index.html" class="text-white hover:underline font-semibold">Home</a>
+        <a href="help.html" class="text-white underline font-semibold">Need Help</a>
+        <a href="wh.html" class="text-white hover:underline font-semibold">Want To Help</a>
+       
+      </div>
+    </div>
+  </nav>
+
+  <div class="flex-grow flex items-center justify-center px-4 py-12">
+    <div class="bg-sky-900  bg-opacity-10 backdrop-blur-lg shadow-2xl z-10 shadow-2xl rounded-3xl p-10 max-w-lg w-full">
+      <h2 class="text-4xl font-bold text-yellow-500 mb-6 text-center">Request Help</h2>
+      <p class="mb-8 text-gray-600 text-center">Fill in the details below and we'll do our best to connect you with someone who can help.</p>
+
+      <form id="help-form" class="space-y-5">
+        <input type="text" id="name-input" placeholder="Full Name" class="w-full px-4 py-3 border-2 border-yellow-300 rounded-lg  focus:ring-4 focus:ring-yellow-300 bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none" required />
+        <input type="email" id="email-input" placeholder="Email Address" class="w-full px-4 py-3 border-2 border-yellow-300 rounded-lg bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none focus:ring-4 focus:ring-yellow-300" required />
+        <input type="tel" id="phone-input" placeholder="Phone Number" class="w-full px-4 py-3 border-2 border-yellow-300 rounded-lg bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none focus:ring-4 focus:ring-yellow-300" required />
+        <input type="text" id="city-input" placeholder="City / Location" class="w-full px-4 py-3 border-2 border-yellow-300 rounded-lg bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none focus:ring-4 focus:ring-yellow-300" required />
+        <textarea id="description-input" placeholder="Describe your situation..." class="w-full px-4 py-3 border-2 border-yellow-300 rounded-lg bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none focus:ring-4 focus:ring-yellow-300 " required></textarea>
+
+        <button type="submit" class="w-full bg-yellow-400 text-white font-bold py-3 rounded-xl shadow-md hover:bg-yellow-500 transition duration-300">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="bg-yellow-400 text-white text-center py-4 mt-auto z-10 shadow-inner">
+    © 2025 BetterTogether - United for a better world
+  </div>
+
+  <script src="../js/help.js"></script>
+
+</body>
+</html>

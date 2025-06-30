@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BetterTogether</title>
+  <style>
+    ::-webkit-scrollbar { width: 0px; color: #ffffff38; }
+  </style>
+  <style>
+  .stroke-white {
+    -webkit-text-stroke: 1.5px white;
+    color: transparent;
+  }
+</style>
+  <style>
+    .card {
+      transform-style: preserve-3d;
+      transition: transform 0.9s;
+      cursor: pointer;
+      perspective: 1000px;
+    }
+    .card:hover {
+  transform: rotateX(60deg) rotateY(-20deg);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+              0 0 35px rgba(123, 104, 238, 0.4);
+  transition: all 0.5s ease;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+    .side {
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: 1px solid white;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <!-- Nav-->
+  <div class="fixed top-0 left-0 w-full p-4 bg-black shadow-xl shadow-[#ffffff30] bg-opacity-50 z-50">
+    <div class="w-[80%] mx-auto flex justify-between items-center">
+      <div class="flex gap-1 items-center flex-row">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" x="0" y="0" viewBox="0 0 500 500" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path stroke="#000" stroke-miterlimit="10" d="M308.6 364.9c-.8 0-1.7-.1-2.5-.4-23.8-8.6-44.7-18.2-62.9-28.5-23.9 10.6-45.4 16.3-62 19.4-32.9 6-54.4 3.5-55.3 3.4-4.1-.5-7-4.3-6.5-8.4s4.3-7 8.4-6.5c.2 0 20.6 2.4 51.4-3.3 13.3-2.5 29.8-6.8 48.2-14.1-66-42.6-90.3-94.2-89.3-131.9.8-28.1 15.4-49.9 38.2-56.7 15.9-4.8 30.6-3.3 43.8 4.4 18.4 10.7 29.6 31.5 35.7 46.8 3.4-6.3 8-13.6 13.8-20.6 20.6-25 46.3-34.5 74.5-27.4 19.3 4.9 31.9 17.3 35.5 35.1 3.4 16.9-1.5 37.1-14.1 58.6-13.1 22.2-34.2 44.6-60.9 64.9a308.44 308.44 0 0 1-44.7 28.4c15.7 8.3 32.9 15.8 51.3 22.4 3.9 1.4 5.9 5.7 4.5 9.6-1.1 2.9-4 4.8-7.1 4.8zM194 150c-4.3 0-8.7.7-13.4 2.1-16.7 5-27 21-27.6 42.8-.7 24.9 11.3 52.5 33.7 77.9 14.9 16.9 34.3 32.5 57.4 46.3 16.3-7.8 33.8-18 51.4-31.5 25.2-19.2 44.9-40.1 57-60.6 10.6-17.9 15-34.9 12.4-47.9-2.5-12.1-10.7-20-24.5-23.5-22.3-5.7-42.1 1.8-59 22.1-13.3 16-19.7 34.3-19.7 34.5-1.1 3.2-4.2 5.2-7.5 5.1-3.4-.2-6.2-2.6-6.9-5.8-.1-.4-9.7-41.5-34.8-56.2-5.8-3.6-12-5.3-18.5-5.3z" fill="#e9dcdc" opacity="1" data-original="#000000" class=""></path></g></svg>
+        <h2 class="text-white text-xl font-bold">BetterTogether</h2>
+      </div>
+      <div class="flex gap-6">
+        
+       <a href="index.html" class="flex items-center gap-2 text-white hover:text-yellow-300">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 512 512">
+    <path d="M506.555 208.064L263.859 30.367a13.3 13.3 0 0 0-15.716 0L5.445 208.064c-5.928 4.341-7.216 12.665-2.875 18.593s12.666 7.214 18.593 2.875L256 57.588l234.837 171.943a13.236 13.236 0 0 0 7.848 2.57c4.096 0 8.138-1.885 10.744-5.445 4.342-5.927 3.054-14.251-2.874-18.592z" />
+    <path d="M442.246 232.543c-7.346 0-13.303 5.956-13.303 13.303v211.749H322.521V342.009c0-36.68-29.842-66.52-66.52-66.52s-66.52 29.842-66.52 66.52v115.587H83.058V245.847c0-7.347-5.957-13.303-13.303-13.303s-13.303 5.956-13.303 13.303V470.9c0 7.347 5.957 13.303 13.303 13.303h133.029c6.996 0 12.721-5.405 13.251-12.267.032-.311.052-.651.052-1.036V342.01c0-22.009 17.905-39.914 39.914-39.914s39.914 17.906 39.914 39.914V470.9c0 .383.02.717.052 1.024.524 6.867 6.251 12.279 13.251 12.279h133.029c7.347 0 13.303-5.956 13.303-13.303V245.847c-.001-7.348-5.957-13.304-13.304-13.304z" />
+  </svg>
+  Home
+</a>
+
+        <a href="../services/html/help.html" class="flex items-center gap-2 text-white hover:text-yellow-300"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" x="0" y="0" viewBox="0 0 682.667 682.667" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><defs><clipPath id="a" clipPathUnits="userSpaceOnUse"><path d="M0 512h512V0H0Z" fill="#ebe0e0" opacity="1" data-original="#000000"></path></clipPath></defs><g clip-path="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)"><path d="m0 0 41.543 41.543c9.367 9.367 24.553 9.367 33.919 0v0c9.367-9.366 9.367-24.553 0-33.919L53.987-13.852" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(256.594 399.437)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 21.975 21.975c9.367 9.367 24.553 9.367 33.92 0v0c9.366-9.366 9.366-24.552 0-33.919L22.339-45.5" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(310.08 385.086)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 29.283 29.283c9.367 9.367 24.553 9.367 33.92 0v0c9.366-9.366 9.366-24.552 0-33.919L29.647-38.192" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(336.692 343.858)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 29.283 29.283c9.367 9.367 24.553 9.367 33.92 0v0c9.366-9.366 9.366-24.552 0-33.919l-82.656-82.656a150.117 150.117 0 0 0-106.149-43.968v0a46.334 46.334 0 0 1-32.761-13.57l-154.603-154.604" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(370.612 309.94)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-36.013 36.013c-9.367 9.367-9.367 24.553 0 33.919v0c9.366 9.367 24.553 9.367 33.919 0l36.013-36.013c9.367-9.366 9.367-24.552 0-33.919v0C24.553-9.367 9.367-9.367 0 0Z" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(163.689 287.66)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-36.013 36.013c-9.367 9.367-9.367 24.553 0 33.919v0c9.366 9.367 24.553 9.367 33.919 0l36.013-36.013c9.367-9.366 9.367-24.552 0-33.919v0C24.553-9.367 9.367-9.367 0 0Z" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(197.608 321.58)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-36.013 36.013c-9.367 9.367-9.367 24.553 0 33.919v0c9.366 9.367 24.553 9.367 33.919 0l36.013-36.013c9.367-9.366 9.367-24.552 0-33.919v0C24.553-9.367 9.367-9.367 0 0Z" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(231.527 355.499)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-21.226 21.226c-9.367 9.367-9.367 24.553 0 33.92v0c9.366 9.366 24.552 9.366 33.919 0l21.226-21.227c9.367-9.366 9.367-24.552 0-33.919v0C24.553-9.367 9.367-9.367 0 0ZM0 0l-119.53-119.53" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(129.77 253.741)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-77.086 77.086v.001a100.161 100.161 0 0 1-13.254 53.698l-.802 1.395" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(502 150.166)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-138.239 138.239v0a66.46 66.46 0 0 0-52.114 9.111l-26.407 17.394" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(448.968 9.995)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 85.556-85.556" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(129.77 253.741)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 85.556-85.556" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(93.545 217.517)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-91.32-91.32" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(422.051 225.698)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-13.429-13.429" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(380.385 111.583)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-13.781-13.781" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(457.784 188.982)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="M0 0v0" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(412.183 143.381)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 47.071-47.071" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(27.558 484.448)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="M0 0v34.516" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(122 467.49)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="M0 0h-34.516" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(44.516 390.005)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-47.071-47.071" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(484.442 484.448)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="M0 0v34.516" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(390 467.49)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="M0 0h34.516" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(467.484 390.005)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path></g></g></svg>Need Help</a>
+        <a href="../services/html/wh.html" class="flex items-center gap-2 text-white hover:text-yellow-300"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" x="0" y="0" viewBox="0 0 682.667 682.667" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><defs><clipPath id="a" clipPathUnits="userSpaceOnUse"><path d="M0 512h512V0H0Z" fill="#ebe0e0" opacity="1" data-original="#000000"></path></clipPath></defs><g clip-path="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)"><path d="m0 0 41.543 41.543c9.367 9.367 24.553 9.367 33.919 0v0c9.367-9.366 9.367-24.553 0-33.919L53.987-13.852" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(256.594 399.437)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 21.975 21.975c9.367 9.367 24.553 9.367 33.92 0v0c9.366-9.366 9.366-24.552 0-33.919L22.339-45.5" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(310.08 385.086)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 29.283 29.283c9.367 9.367 24.553 9.367 33.92 0v0c9.366-9.366 9.366-24.552 0-33.919L29.647-38.192" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(336.692 343.858)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 29.283 29.283c9.367 9.367 24.553 9.367 33.92 0v0c9.366-9.366 9.366-24.552 0-33.919l-82.656-82.656a150.117 150.117 0 0 0-106.149-43.968v0a46.334 46.334 0 0 1-32.761-13.57l-154.603-154.604" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(370.612 309.94)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-36.013 36.013c-9.367 9.367-9.367 24.553 0 33.919v0c9.366 9.367 24.553 9.367 33.919 0l36.013-36.013c9.367-9.366 9.367-24.552 0-33.919v0C24.553-9.367 9.367-9.367 0 0Z" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(163.689 287.66)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-36.013 36.013c-9.367 9.367-9.367 24.553 0 33.919v0c9.366 9.367 24.553 9.367 33.919 0l36.013-36.013c9.367-9.366 9.367-24.552 0-33.919v0C24.553-9.367 9.367-9.367 0 0Z" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(197.608 321.58)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-36.013 36.013c-9.367 9.367-9.367 24.553 0 33.919v0c9.366 9.367 24.553 9.367 33.919 0l36.013-36.013c9.367-9.366 9.367-24.552 0-33.919v0C24.553-9.367 9.367-9.367 0 0Z" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(231.527 355.499)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-21.226 21.226c-9.367 9.367-9.367 24.553 0 33.92v0c9.366 9.366 24.552 9.366 33.919 0l21.226-21.227c9.367-9.366 9.367-24.552 0-33.919v0C24.553-9.367 9.367-9.367 0 0ZM0 0l-119.53-119.53" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(129.77 253.741)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-77.086 77.086v.001a100.161 100.161 0 0 1-13.254 53.698l-.802 1.395" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(502 150.166)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-138.239 138.239v0a66.46 66.46 0 0 0-52.114 9.111l-26.407 17.394" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(448.968 9.995)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 85.556-85.556" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(129.77 253.741)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 85.556-85.556" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(93.545 217.517)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-91.32-91.32" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(422.051 225.698)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-13.429-13.429" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(380.385 111.583)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-13.781-13.781" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(457.784 188.982)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="M0 0v0" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(412.183 143.381)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0 47.071-47.071" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(27.558 484.448)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="M0 0v34.516" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(122 467.49)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="M0 0h-34.516" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(44.516 390.005)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="m0 0-47.071-47.071" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(484.442 484.448)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="M0 0v34.516" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(390 467.49)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path><path d="M0 0h34.516" style="stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="translate(467.484 390.005)" fill="none" stroke="#ebe0e0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="" data-original="#000000" opacity="1" class=""></path></g></g></svg>Want to Help</a>
+        <a href="#contact" class="flex items-center gap-2 text-white hover:text-yellow-300"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" x="0" y="0" viewBox="0 0 90 90" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M33.756 12.44c.119-.067.088-.109.506.088.418.198 1.082.713 1.734 1.419 1.301 1.424 2.607 3.581 3.287 5.005.021.047.047.088.072.129 1.918 3.306 2.744 5.831 2.77 7.421.027 1.586-.396 2.271-1.744 3.045l-3.486 2.006c-2.268 1.305-3.338 3.644-3.604 5.826-.268 2.183.131 4.304 1.102 5.981l8.59 14.806c.977 1.673 2.627 3.077 4.66 3.939 2.033.863 4.604 1.107 6.871-.197l3.49-1.996c1.348-.774 2.152-.796 3.521.02 1.373.816 3.154 2.786 5.072 6.09.027.048.053.089.084.136.898 1.294 2.121 3.498 2.711 5.333.293.914.408 1.74.371 2.203-.041.458-.051.406-.172.478l-2.645 1.518c-6.65 2.89-12.742 2.24-18.191-.592-5.465-2.833-10.215-7.963-13.521-13.98-.012-.011-.016-.027-.027-.036l-7.24-12.483c-.006-.016-.016-.026-.021-.043-3.584-5.856-5.684-12.514-5.424-18.635.262-6.112 2.754-11.688 8.6-15.976zm2.121-3.32c-1.145-.535-2.723-.692-4.014.052l-2.799 1.611c-.064.036-.121.073-.178.109-6.74 4.932-9.844 11.797-10.146 18.875-.305 7.074 2.059 14.375 5.961 20.757l7.205 12.41c.004 0 .01 0 .01.005l.01.032C35.531 69.504 40.699 75.172 47 78.446c6.311 3.275 13.83 4.034 21.494.692.068-.026.131-.057.193-.089l2.801-1.61c1.291-.744 1.943-2.172 2.049-3.425.109-1.258-.146-2.468-.533-3.67-.758-2.375-2.07-4.67-3.162-6.257-2.068-3.544-4.053-6.012-6.357-7.384a7.256 7.256 0 0 0-7.377-.057l-3.49 2.001c-1.029.592-2.227.529-3.486-.005-1.264-.536-2.428-1.611-2.867-2.36l-8.59-14.806c-.434-.748-.783-2.292-.621-3.643.166-1.357.709-2.416 1.738-3.009l3.48-2.001c2.273-1.304 3.689-3.689 3.646-6.382-.047-2.675-1.201-5.633-3.266-9.199-.836-1.724-2.172-4-3.85-5.83-.851-.932-1.781-1.757-2.925-2.292z" fill="#e7dbdb" opacity="1" data-original="#000000"></path></g></svg>Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- S1 -->
+  <div class="relative h-screen bg-[url('../../image/cover.jpeg')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+
+      <h1 id="title"
+          class=" mb-8 text-6xl font-extrabold uppercase text-transparent stroke-white stroke-[1.5px]
+                 opacity-0 translate-y-10 transition-all duration-700 ease-out">
+        Together<br> We Make a Difference
+      </h1>
+
+      <p id="subtitle"
+         class=" text-2xl mb-8 text-pink-200  opacity-0 translate-y-10 transition-all duration-700 ease-out"
+         >
+        Connecting Hearts To Build a Better World
+      </p>
+
+      <a id="cta"
+         href="../log/html/l.html"
+         class="bg-yellow-400 text-black font-bold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500
+                opacity-0 translate-y-10 transition-all duration-700 ease-out">
+        Join Us Now
+      </a>
+
+    </div>
+  </div>
+
+
+
+  <!-- S2 -->
+  <div class="py-10 bg-gradient-to-br from-stone-500 via-stale-600 to-cyan-900
+ text-center px-5 ">
+    <h2 class="text-4xl font-bold mb-10  uppercase text-slate-950 stroke-white stroke-[1.5px]">Our Volunteers' Stories</h2>
+
+    <a class="bg-gradient-to-r from-indigo-500 to-sky-600 hover:from-pink-500 hover:to-yellow-400 text-white font-semibold py-2 px-6 rounded-full shadow-md transition-all duration-300 hover:scale-105 cursor-pointer" href="../experience/experience.html">
+      Share Your Experience
+    </a>
+
+    
+    <div id="cards-container" class="flex overflow-x-scroll snap-x w-[80%] mx-auto gap-64 mt-8 px-4 py-6">
+      
+    </div>
+  </div>
+
+  <!-- S3 -->
+  <div class="py-20 bg-cyan-900 text-white text-center px-6">
+    <h2 class="text-4xl font-bold mb-8">Become a Volunteer Today</h2>
+    <p class="text-lg mb-10 max-w-2xl mx-auto">
+      Your time and skills can transform lives. Join us and be part of a movement that changes the world, one good deed at a time.
+    </p>
+    <a href="help.html" class="bg-yellow-400 text-black font-bold px-8 py-4 rounded-full shadow-lg hover:bg-yellow-500 transition">
+      I Want to Help
+    </a>
+  </div>
+<!--  Contact Us -->
+<div id="contact" class="py-12 bg-gray-900 text-white px-6">
+  <div class="max-w-7xl mx-auto flex   gap-16  min-h-[500px]">
+  
+    <!--Info -->
+    <div class="md:w-1/2 bg-gray-800 rounded-xl p-10 shadow-lg flex flex-col space-y-6">
+      <h2 class="text-3xl font-extrabold border-b border-yellow-400 pb-2 mb-0">Our Contact Info</h2>
+
+      <div class="flex items-center gap-4 text-yellow-400">
+       
+        <p class="text-lg font-medium">BetterTogether001@gmail.com</p>
+      </div>
+
+      <div class="flex items-center gap-4 text-yellow-400">
+       
+        
+        <p class="text-lg font-medium">+216 flex-wrap54 101 059</p>
+      </div>
+
+      <div class="flex items-center gap-4 text-yellow-400">
+      
+       
+        <p class="text-lg font-medium">Manouba, Tunisia</p>
+      </div>
+
+      <div class="flex items-center gap-4 text-yellow-400">
+      
+       
+        <p class="text-lg font-medium">Mon-sun 9:00 AM - 6:00 PM</p>
+      </div>
+    </div>
+    
+  <!-- Form -->
+<div class="md:w-1/2 bg-gray-800 rounded-xl p-10 shadow-lg">
+  <h2 class="text-3xl font-extrabold mb-6 text-center border-b border-yellow-400 pb-2">Contact Us</h2>
+  <p class="mb-8 text-gray-300 text-center max-w-xl mx-auto">
+    Have questions or want to get involved? Send us a message!
+  </p>
+
+  <form id="contact-form" class="space-y-6 max-w-xl mx-auto" autocomplete="off">
+    <input
+      type="text" id="contact-name" placeholder="Your Name" required
+      class="w-full px-5 py-3 rounded-lg bg-gray-700 border border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:ring-4 focus:ring-yellow-400 transition"
+    />
+
+    <input
+      type="email" id="contact-email" placeholder="Your Email" required
+      class="w-full px-5 py-3 rounded-lg bg-gray-700 border border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:ring-4 focus:ring-yellow-400 transition"
+    />
+
+    <textarea
+      id="contact-message" rows="4" placeholder="Your Message" required
+      class="w-full px-5 py-3 rounded-lg bg-gray-700 border border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:ring-4 focus:ring-yellow-400 resize-none transition"
+    ></textarea>
+
+    
+    <div class="flex flex-col md:flex-row gap-4">
+      <button
+        type="submit" id="btn"
+        class="w-full md:w-1/2 bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-6 py-3 rounded-full shadow-lg transition duration-300"
+      >
+        Send Message
+      </button>
+
+      <a
+        href="contact/admin.html"
+        class="w-full md:w-1/2 bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-6 py-3 rounded-full shadow-lg text-center transition duration-300"
+      >
+        Messages
+      </a>
+    </div>
+  </form>
+</div>
+
+  </div>
+</div>
+
+
+  
+
+  <div class="py-6 bg-gray-900 text-white text-center">
+    ©2025 BetterTogether - All rights reserved
+  </div>
+
+  
+ <script src="../experience/exp.js"></script>
+
+<script src="./contact/contact.js"></script>
+
+<script src="./animation.js"></script>
+
+
+
+
+</body>
+</html>

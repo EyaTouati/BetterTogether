@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login/Register</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-black relative px-4">
+  
+  <div class="absolute inset-0  bg-no-repeat bg-[url('../../../image/cover.jpeg')] bg-cover bg-center"></div>
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+ 
+  <div class="relative z-10 w-full max-w-md p-8 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg">
+
+    
+    <form id="login-form" class="space-y-6">
+      <h2 class="text-3xl font-bold text-white text-center">Login</h2>
+
+      <div>
+        <label class="text-white text-sm">Email</label>
+        <input type="text" id="login-email" required
+          class="w-full mt-1 px-3 py-2 bg-transparent border-b focus:border-yellow-500 border-white text-white placeholder-white/70 focus:outline-none transition duration-300"
+          placeholder="Enter your email">
+      </div>
+
+      <div>
+        <label class="text-white text-sm">Password</label>
+        <input type="password" id="login-password" required
+          class="w-full mt-1 px-3 py-2 bg-transparent border-b focus:border-yellow-500 border-white text-white placeholder-white/70 focus:outline-none transition duration-300"
+          placeholder="Enter your password">
+      </div>
+
+      <div class="flex justify-between text-sm text-white">
+        <label class="flex items-center">
+          <input type="checkbox" id="remember" class="mr-2 accent-yellow-400"> Remember me
+        </label>
+
+      </div>
+
+      <button type="submit"
+        class="w-full py-2 bg-white text-black font-semibold rounded hover:bg-yellow-300 transition">Log In</button>
+
+      <p class="text-center text-sm text-white mt-4">
+        Don't have an account? <span class="text-yellow-300 cursor-pointer underline"
+          onclick="toggleForms()">Register</span>
+      </p>
+    </form>
+
+   
+    <form id="register-form" class="space-y-6 hidden mt-8">
+      <h2 class="text-3xl font-bold text-white text-center">Register</h2>
+
+      <div>
+        <label class="text-white text-sm">Username</label>
+        <input type="text" id="register-username" required
+          class="w-full mt-1 px-3 py-2 bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none"
+          placeholder="Enter your username">
+      </div>
+
+      <div>
+        <label class="text-white text-sm">Email</label>
+        <input type="email" id="register-email" required
+          class="w-full mt-1 px-3 py-2 bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none"
+          placeholder="Enter your email">
+        <div id="email-error" class="text-red-400 text-xs mt-1"></div>
+      </div>
+
+      <div>
+        <label class="text-white text-sm">Password</label>
+        <input type="password" id="register-password" required
+          class="w-full mt-1 px-3 py-2 bg-transparent border-b border-white text-white placeholder-white/70 focus:outline-none"
+          placeholder="Create a password">
+        <div id="password-error" class="text-red-400 text-xs mt-1"></div>
+      </div>
+
+      <button type="submit"
+        class="w-full py-2 bg-white text-black font-semibold rounded hover:bg-yellow-300 transition">Register</button>
+
+      <p class="text-center text-sm text-white mt-4">
+        Already have an account? <span class="text-yellow-300 cursor-pointer underline"
+          onclick="toggleForms()">Login</span>
+      </p>
+    </form>
+  </div>
+
+  <script src="../js/l.js"></script>
+
+</body>
+
+</html>
