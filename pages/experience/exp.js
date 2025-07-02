@@ -4,15 +4,15 @@ let nameInput = document.getElementById("name-input");
 let expInput = document.getElementById("exp-input");
 let fileInput = document.getElementById("file-upload");
 let exps = JSON.parse(localStorage.getItem("experiences")) || [];
+let editIndex = localStorage.getItem("editIndex") || -1;
 
-
-if (bt) {
+if (bt && editIndex === -1) {
   bt.addEventListener("click", () => {
     if (nameInput.value && expInput.value) {
       const newExp = {
         name: nameInput.value,
         story: expInput.value,
-        image: ""
+        image: "",
       };
 
       if (fileInput.files[0]) {
@@ -22,9 +22,9 @@ if (bt) {
           exps.push(newExp);
           saveToLocalStorage();
           nameInput.value = "";
-        expInput.value = "";
-        fileInput.value = "";
-        window.location.href = "../home/index.html";
+          expInput.value = "";
+          fileInput.value = "";
+          window.location.href = "../home/index.html";
         };
         reader.readAsDataURL(fileInput.files[0]);
       } else {
@@ -35,13 +35,38 @@ if (bt) {
         expInput.value = "";
         fileInput.value = "";
         window.location.href = "../home/index.html";
-
       }
     } else {
       alert("Please fill in both fields.");
     }
   });
 }
+
+if (bt && editIndex !== -1) {
+  bt.addEventListener("click", () => {
+    if (nameInput.value && expInput.value) {
+      exps[editIndex].name = nameInput.value;
+      exps[editIndex].story = expInput.value;
+      localStorage.setItem("experiences", JSON.stringify(exps));
+      localStorage.removeItem("editIndex");
+      nameInput.value = "";
+      expInput.value = "";
+      fileInput.value = "";
+      window.location.href = "../home/index.html";
+    } else {
+      alert("Please fill in both fields.");
+    }
+  });
+}
+
+if (editIndex !== -1) {
+  const expToEdit = exps[editIndex];
+  nameInput.value = expToEdit.name;
+  expInput.value = expToEdit.story;
+  bt.textContent = "Update Experience";
+  fileInput.parentElement.style.display = "none";
+}
+
 
 // Enregistrer dans localStorage
 function saveToLocalStorage() {
