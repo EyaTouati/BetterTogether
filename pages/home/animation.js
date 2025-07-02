@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showElement("title", 300);
       showElement("subtitle", 1000);
       showElement("cta", 1700);
+      showElement("ct", 2400);
     });
    
 
