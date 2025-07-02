@@ -29,6 +29,6 @@ setTimeout(() => {
         updateCount();
       });
     }
-  }, 3100); // 2400ms (apparition) + 700ms (transition)
+  }, 3100); 
 
 

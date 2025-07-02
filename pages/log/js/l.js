@@ -35,6 +35,7 @@ loginForm.addEventListener("submit", (e) => {
 
   if (user) {
     if (email==="admin@gmail.com"&& password==="admin123"){
+      localStorage.setItem("isLoggedIn", "true");
       window.location.href ="../html/affichage.html";
       return;
 
