@@ -65,7 +65,7 @@ function displayUsers() {
   exps.forEach((exp, index) => {
     const card = document.createElement("div");
     card.className = "relative card w-[240px] h-[280px] bg-white rounded-md";
-    card.style.border = "1px solid white";
+    card.style.border = "1px solid gray";
     card.style.transformStyle = "preserve-3d";
     card.style.transition = "transform 0.9s";
 
@@ -107,7 +107,7 @@ function displayUsers() {
     editBtn.className = "cursor-pointer w-[50px] h-[30px] bg-green-800 text-white rounded hover:bg-green-900 transition";
     editBtn.onclick = () => {
       localStorage.setItem("editIndex", index);
-      window.location.href = "experience.html";
+      window.location.href = "/pages/experience/experience.html";
     };
 
     bottom.appendChild(deleteBtn);

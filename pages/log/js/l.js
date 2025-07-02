@@ -34,6 +34,11 @@ loginForm.addEventListener("submit", (e) => {
   let user = users.find(u => u.email === email && u.password === password);
 
   if (user) {
+    if (email==="admin@gmail.com"&& password==="admin123"){
+      window.location.href ="../html/affichage.html";
+      return;
+
+    }
    
     email = "";
     password = "";
