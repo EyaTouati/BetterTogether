@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" class="h-full" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Need Help - BetterTogether</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="relative  bg-[url('../../../image/cover.jpeg')] bg-cover bg-center flex flex-col">
+<body class="relative min-h-scree h-full overflow-x-hidden bg-[url('../../../image/cover.jpeg')] bg-cover bg-center bg-no-repeat flex flex-col">
 <div class="absolute inset-0 bg-black bg-opacity-50"></div>
   <!-- Nav -->
   <nav class="bg-yellow-400 z-20 bg-opacity-50 shadow-lg p-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center z-50">
       <h1 class="text-3xl font-extrabold text-white">BetterTogether</h1>
-      <div class="space-x-6">
+       <button id="menu-btn" class="sm:hidden text-white text-3xl focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M3.5 7.5h17a1.5 1.5 0 1 0 0-3h-17a1.5 1.5 0 1 0 0 3zM20.5 10.5h-17a1.5 1.5 0 1 0 0 3h17a1.5 1.5 0 1 0 0-3zM20.5 16.5h-17a1.5 1.5 0 1 0 0 3h17a1.5 1.5 0 1 0 0-3z" fill="#e7e6e6" opacity="1" data-original="#000000" class=""></path></g></svg>
+    </button>
+      <div id="menu" class="hidden sm:flex space-x-6">
         <a href="../../home/index.html" class="text-white hover:underline font-semibold">Home</a>
         <a href="help.html" class="text-white underline font-semibold">Need Help</a>
         <a href="wh.html" class="text-white hover:underline font-semibold">Want To Help</a>
        
       </div>
     </div>
+     <div id="mobile-menu" class="sm:hidden hidden flex flex-col space-y-4 mt-4 px-4">
+    <a href="../../home/index.html" class="text-white font-semibold">Home</a>
+    <a href="help.html" class="text-white font-semibold">Need Help</a>
+    <a href="wh.html" class="text-white font-semibold">Want to Help</a>
+  </div>
   </nav>
 
   <div class="flex-grow flex items-center justify-center px-4 py-12">
@@ -41,6 +49,14 @@
   <div class="bg-yellow-400 text-white text-center py-4 mt-auto z-10 shadow-inner">
     © 2025 BetterTogether - United for a better world
   </div>
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
 
   <script src="../js/help.js"></script>
 

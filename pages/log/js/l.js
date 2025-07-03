@@ -22,7 +22,7 @@ registerForm.addEventListener("submit", (e) => {
   email = "";
   password = "";
  toggleForms()
-  window.location.href = "../html/affichage.html";
+  window.location.href = "../../home/index.html";
 
 });
 
