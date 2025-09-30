@@ -22,7 +22,7 @@ registerForm.addEventListener("submit", (e) => {
   email = "";
   password = "";
  toggleForms()
-  window.location.href = "../../home/index.html";
+  window.location.href = "../public/index.html";
 
 });
 
@@ -36,14 +36,14 @@ loginForm.addEventListener("submit", (e) => {
   if (user) {
     if (email==="admin@gmail.com"&& password==="admin123"){
       localStorage.setItem("isLoggedIn", "true");
-      window.location.href ="../html/affichage.html";
+      window.location.href ="../public/users.html";
       return;
 
     }
    
     email = "";
     password = "";
-    window.location.href = "../../home/index.html";
+    window.location.href = "../public/index.html";
 
 
   } else {

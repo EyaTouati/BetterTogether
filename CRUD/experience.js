@@ -24,7 +24,7 @@ if (bt && editIndex === -1) {
           nameInput.value = "";
           expInput.value = "";
           fileInput.value = "";
-          window.location.href = "../home/index.html";
+          window.location.href = "../public/index.html";
         };
         reader.readAsDataURL(fileInput.files[0]);
       } else {
@@ -34,7 +34,7 @@ if (bt && editIndex === -1) {
         nameInput.value = "";
         expInput.value = "";
         fileInput.value = "";
-        window.location.href = "../home/index.html";
+        window.location.href = "../public/index.html";
       }
     } else {
       alert("Please fill in both fields.");
@@ -52,7 +52,7 @@ if (bt && editIndex !== -1) {
       nameInput.value = "";
       expInput.value = "";
       fileInput.value = "";
-      window.location.href = "../home/index.html";
+      window.location.href = "../public/index.html";
     } else {
       alert("Please fill in both fields.");
     }
